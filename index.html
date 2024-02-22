@@ -28,7 +28,7 @@
         .modal {
             display: none; 
             position: fixed;
-            z-index: 2; 
+            z-index: ; 
             left: 0;
             top: 0;
             width: 100%; 
@@ -68,6 +68,9 @@
             text-decoration: none;
             cursor: pointer;
         }
+        body.modal-open {
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -82,11 +85,12 @@
         </figure>
         <h2>NUV युवा 2024</h2>
         <p>
-            Welcone to nuvyuva2024
+            Welcome to nuvyuva2024
         </p>
-        <a class="btn gradient-bg" href="single-event.html" style="font-family:Nunito;">register now </a>
+        <a class="btn gradient-bg" href="#" style="font-family:Nunito;">register now </a>
     </div>
 </div>
+
 
 <!-- JavaScript to trigger the popup after a delay -->
 <script>
@@ -94,15 +98,17 @@
     function displayPopup() {
         var modal = document.getElementById('popupModal');
         modal.style.display = "block";
+        document.body.classList.add('modal-open'); // Add class to body to prevent scrolling
     }
 
     // Close the popup when the user clicks on the close button
     document.getElementsByClassName("close")[0].onclick = function() {
         var modal = document.getElementById('popupModal');
         modal.style.display = "none";
+        document.body.classList.remove('modal-open'); // Remove class to allow scrolling
     }
 
-  
+    // Open the popup after a delay (e.g., 5 seconds)
     setTimeout(displayPopup, 1000); // Adjust the delay time as needed
 </script>
     <div class="header-bar">
